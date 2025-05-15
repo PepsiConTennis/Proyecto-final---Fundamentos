@@ -1,0 +1,170 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void serie1()
+{
+    int var1, var2, bebida, acum, bebida2, acum2, pueblo;
+    int max = 0;
+    int i;
+    int j;
+    int max2 = 0;
+    int max3 = 0;
+    int arr[100][8];
+    int total[8] = {0,0,0,0,0,0,0,0};
+    int total2[8] = {0,0,0,0,0,0,0,0};
+    int total3[100];
+    
+    for(i = 0; i < 10; i++)
+    {
+        for(j = 0; j < 8; j++)
+        {
+            arr[i][j] = 0;
+        }
+    }
+    
+    printf("Pato De Hule inicializado correctamente Bv. \n");
+}
+
+void serie2()
+{
+    int var1;
+    int i;
+    int var2;
+    int arr[100][8];
+
+    for (i = 1; i <= 10; i++)
+    {
+        printf("Dame la bebida correspondiente del pueblo %d: \n", i);
+        printf("Para cambiar al siguiente pueblo introduzca '-1'. \n");
+        scanf("%d", &var1);
+
+        while (var1 != -1)
+        {
+            if (var1 < 0 || var1 > 7)
+            {
+                printf("Bebida invalida, elija otra entre 0 y 7. \n");
+            }
+            else
+            {
+                printf("Introduzca la cantidad en litros: \n");
+                scanf("%d", &var2);
+                arr[i][var1] = var2;
+            }
+            printf("Dame otra bebida: \n");
+            scanf("%d", &var1);
+        }
+    }
+}
+void serie3()
+{
+    int i;
+    int j;
+    int arr[100][8];
+    int total[8] = {0,0,0,0,0,0,0,0};
+    for(j = 0; j < 8; j++)
+    {
+        for(i = 0; i <= 10; i++)
+        {
+            total[j] = total[j] + arr[i][j];
+        }
+    }
+}
+void serie4()
+{
+    int max = 0;
+    int i;
+    int bebida;
+    int total[8] = {0,0,0,0,0,0,0,0};
+    for(i = 0; i < 8; i++)
+    {
+        if(max < total[i])
+        {
+            max = total[i];
+            bebida = i;
+        }
+    }
+    printf("La bebida %d es la más consumida con %d litros: \n", bebida, max);
+}
+void serie5()
+{
+    int i;
+    int j;
+    int arr[100][8];
+    int acum;
+    int max2 = 0;
+    int bebida2;
+    int total2[8] = {0,0,0,0,0,0,0,0};
+    
+    for(i = 0; i < 8; i++)
+    {
+        acum = 0;
+        if(i != 1 && i != 6)
+        {
+            for(j = 0; j < 10; j++)
+            {
+                acum = acum + arr[j][i];
+            }
+            total2[i] = acum;
+        }
+    }
+    for(i = 0; i < 8; i++)
+    {
+        if(max2 < total2[i])
+        {
+            max2 = total2[i];
+            bebida2 = i;
+        }
+    }
+    printf("La bebida %d es la más consumida con %d litros \n", bebida2, max2);
+}
+void serie6()
+{
+    int acum2;
+    int acum3;
+    int pueblo;
+    int i;
+    int j;
+    int max3=0;
+    int total3[100];
+    int arr[100][8];
+    
+    for(i = 0; i < 10; i++)
+    {
+        total3[i] = 0;
+    }
+    for(i = 0; i < 10; i++)
+    {
+        acum2 = 0;
+        for(j = 0; j < 8; j++)
+        {
+            if(j != 1 && j != 6)
+            {
+                acum2 = acum2 +arr[i][j];
+            }
+        }
+        total3[i] = acum2;
+    }
+    for(i = 0; i < 10; i++)
+    {
+        if(max3 < total3[i])
+        {
+            max3 = total3[i];
+            pueblo = i;
+        }
+    }
+    printf("El pueblo %d consume más alcohol con %d litros.", pueblo, max3);
+}
+int main()
+{
+    int i = 0;
+    int j = 0;
+    serie1();
+    serie2();
+    serie3();
+    serie4();
+    serie5();
+    serie6();
+    
+    return 0;
+}
