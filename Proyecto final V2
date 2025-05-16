@@ -38,13 +38,21 @@ int serie2()
 
     for (i = 1; i < 10; i++)
     {
+        printf("1- Vino \n");
+        printf("2- Refresco \n");
+        printf("3- Cerveza \n");
+        printf("4- Agua \n");
+        printf("5- Tequila \n");
+        printf("6- Jugo \n");
+        printf("7- Whisky \n");
+        printf("8- Ron \n");
         printf("Dame la bebida correspondiente del pueblo %d: \n", i);
         printf("Para cambiar al siguiente pueblo introduzca '-1'. \n");
         scanf("%d", &var1);
 
         while (var1 != -1)
         {
-            if (var1 < 0 || var1 > 7)
+            if (var1 < 1 || var1 > 8)
             {
                 printf("Bebida invalida, elija otra entre 0 y 7. \n");
             }
